@@ -1,7 +1,6 @@
 const withCss = require('@zeit/next-css')
 const nextCss = require('@zeit/next-less')
 const withPlugins = require('next-compose-plugins');
-const exportPathMap  = require('./routerMap');
 const _nextCss = [
   nextCss,
   {
@@ -15,7 +14,6 @@ const _withCss = [
   },
 ];
 const nextOption={
-  exportPathMap,
   webpack: (config, { isServer }) => {
     if (isServer) {
       const antStyles = /antd\/.*?\/style\/css.*?/
